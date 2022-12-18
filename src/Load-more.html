@@ -9,13 +9,13 @@
   <body>
     <div class="search-form-wrapper">
       <form class="search-form" id="search-form">
-        <input
+        <input class="input-search"
           type="text"
           name="searchQuery"
           autocomplete="off"
           placeholder="Search images..."
         />
-        <button type="submit">
+        <button class = "submitBtn" type="submit">
           <!-- <svg class="search-icon" width="18" height="18">
             <use href="./images/sprite.svg#search-icon"></use>
           </svg> -->
@@ -24,9 +24,9 @@
     </div>
     <div class="gallery"></div>
     <button type="button" class="load-more is-hidden">Load more</button>
-    <p class="gallery__text is-hidden">
+    <!-- <p class="gallery__text is-hidden">
       We're sorry, but you've reached the end of search results.
-    </p>
-    <!-- <script src="withBtn.js" type="module"></script> -->
+    </p> -->
+    <script src="sort.js" type="module"></script>
   </body>
 </html>
