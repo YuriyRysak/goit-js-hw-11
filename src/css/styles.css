@@ -45,7 +45,7 @@ body {
     position: fixed;
     top: 0;
     left:0;
-    background-image: linear-gradient(to right, #4ab2f3, #f8fe4d);
+    background-image: linear-gradient(to right, #4ab2f3, rgb(162, 210, 112));
   }
   
   .search-form {
@@ -76,7 +76,7 @@ body {
   
   .search-form button:hover,
   .search-form button:focus {
-    background-color: rgb(190, 185, 185);
+    background-color: rgb(79, 38, 160);
   }
   
   .gallery{

@@ -1,5 +1,5 @@
 
-import './css/styles.css';
+import '../css/styles.css';
 import {fetchImg} from './fetchImg';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
@@ -34,30 +34,11 @@ async function onSearchForm(e) {
         return;
     }
 
-    // fetchImg(query, page, perPage)
-    //     .then(({data}) => {
-    //         if (data.totalHits === 0) {
-    //             alertNoImagesFound();
-    //         } else {
-    //             renderGallery(data.hits);
-    //             alertImagesToFound(data);
-    //             simpleLightBox = new SimpleLightbox('.gallery a').refresh();
-    //         }
-
-    //         if (data.totalHits > perPage) {
-    //             loadMoreBtn.classList.remove('is-hidden');
-    //         }
-    //     }
-    // )
-    //     .catch(error => console.log(error));
-
-
     try {
         const object = await fetchImg(query, page, perPage);
         const objData = object.data;
         loadedHits = objData.hits.length;
-        // console.log('first', loadedHits)
-
+       
         if (objData.totalHits === 0) {
             alertNoImagesFound();
             } else {
@@ -78,33 +59,17 @@ async function onSearchForm(e) {
 
 }
 
-
 async function onLoadMoreBtn() {
     page += 1;
 
-    // fetchImg(query, page, perPage)
-    //     .then(({ data }) => {
-    //         const totalPages = Math.ceil(data.totalHits / perPage);
-        
-    //         if (page > totalPages) {
-    //             loadMoreBtn.classList.add('is-hidden');
-    //             alertEndOfSearch();
-    //         } else {
-    //             renderGallery(data.hits);
-    //             simpleLightbox = new SimpleLightbox('.gallery a').refresh();
-    //         }
-
-            
-    //     })
-    //     .catch(error => console.log(error));
-
+    
     try {
         const object = await fetchImg(query, page, perPage);
         const objData = object.data;
-        // const totalPages = Math.ceil(objData.totalHits / perPage);
+        
         const totalHits = objData.totalHits;
         loadedHits += objData.hits.length;
-        // console.log('second', loadedHits)
+        
 
         renderGallery(objData.hits);
             const simpleLightbox = new SimpleLightbox('.gallery a').refresh();
